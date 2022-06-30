@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+:root {
+  --primary-color: #e6761a;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+/* reusible */
+
+.btn {
+  display: inline-block;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  text-decoration: none;
+  outline: none;
+}
+
+.all-center {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.m-bottom {
+  margin-bottom: 1.5rem;
+}
+
+/* Navbar style */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  z-index: 10;
+  width: 100%;
+  opacity: 1;
+  margin-bottom: 1rem;
+  background: var(--primary-color);
+  color: #fff;
+  text-transform: uppercase;
+  position: absolute;
+}
+
+.navbar .navbar_item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar a {
+  color: #fff;
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: var(--light-color);
+}
+
+.logo {
+  width: 2rem;
+}
+
+/* Landing page CSS */
+.landing_page {
+  background: var(--light-color);
+  height: 100vh;
+  color: var(--light-color);
+  position: relative;
+}
+
+.landing_page::before {
+  content: '';
+  background: url('./image/beer_garden_background.jpg') no-repeat center center /
+    cover;
+  background-attachment: fixed;
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.landing_page--action {
+  color: var(--light-color);
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  z-index: 10;
+}
+
+.landing_page--action h2 {
+  padding: 1rem;
+  position: relative;
+  background-color: rgba(51, 51, 51, 0.8);
+}
+
+.btn-landing {
+  background: var(--light-color);
+  color: #333;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.btn:hover {
+  background: var(--dark-color);
+  color: var(--light-color);
+  box-shadow: 2px 2px 2px 2px rgba(51, 51, 51, 0.2);
+}
+
+/* Home page css */
+/* sort */
+.sort_box {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.sort_box p {
+  margin-right: 1rem;
+}
+/* beer card grid */
+.card {
+  background-color: #f4f4f4;
+  color: var(--dark-color);
+  padding: 1rem;
+  box-shadow: 2px 2px 2px 2px rgba(51, 51, 51, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 3px 3px 3px 3px rgba(51, 51, 51, 0.3);
+}
+
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.beer_image {
+  max-width: 6rem;
+}
+
+.btn-card {
+  background: var(--primary-color);
+  color: #333;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* beer item - more details */
+.beer_item {
+  padding-top: 7rem;
+}
+
+.beer_item-box {
+  border: 1px solid black;
+  padding: 2rem;
+}
