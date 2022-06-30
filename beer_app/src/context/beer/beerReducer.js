@@ -19,6 +19,12 @@ export default (state, action) => {
         ...state,
         loading: true,
       };
+    case SORT_BEERS:
+      return {
+        ...state,
+        beers: action.payload,
+        loading: false,
+      };
     default:
       return state;
   }

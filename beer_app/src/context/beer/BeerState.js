@@ -44,6 +44,17 @@ const BeerState = (props) => {
   };
 
   // // sort beers
+  const sortBeers = async (data) => {
+    try {
+      setLoading();
+      dispatch({
+        type: SORT_BEERS,
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   //set loading
   const setLoading = () => dispatch({ type: SET_LOADING });
@@ -56,6 +67,7 @@ const BeerState = (props) => {
         loading: state.loading,
         loadBeers,
         getBeer,
+        sortBeers,
       }}
     >
       {props.children}
