@@ -4,6 +4,7 @@ import Landing from './components/pages/Landing';
 import Home from './components/pages/Home';
 import Beer from './components/pages/Beer';
 import Error from './components/pages/Error';
+import Footer from './components/layout/Footer';
 
 import BeerState from './context/beer/BeerState';
 
@@ -21,6 +22,7 @@ function App() {
             <Route path='/beer/:id' element={<Beer />} exact />
             <Route path='*' element={<Error />} />
           </Routes>
+          <Footer />
         </div>
       </Router>
     </BeerState>

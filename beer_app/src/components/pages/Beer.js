@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useContext } from 'react';
+import React, { Fragment, useContext } from 'react';
 import Spinner from '../layout/Spinner';
 import { Link, useParams } from 'react-router-dom';
 import BeerContext from '../../context/beer/beerContext';
@@ -6,15 +6,11 @@ import BeerContext from '../../context/beer/beerContext';
 const Beer = () => {
   // app level state first variant
   const beerContext = useContext(BeerContext);
-  const { loading, beers, getBeer } = beerContext;
+  const { loading, beers } = beerContext;
   const { id } = useParams();
-  // useEffect(() => {
-  //   getBeer(id);
-  //   // eslint-disable-next-line
-  // }, []);
 
   // here i am not using app level state second variant
-  const beerpost = beers.filter((beer) => beer.id == id);
+  const beerpost = beers.filter((beer) => parseInt(beer.id) === parseInt(id));
   const { name, first_brewed, description, image_url, ibu, abv, ebc, srm, ph } =
     beerpost[0];
 

@@ -4,17 +4,18 @@ import BeerContext from '../../context/beer/beerContext';
 
 const Landing = () => {
   const beerContext = useContext(BeerContext);
+
+  const handleClick = () => {
+    beerContext.loadBeers();
+  };
+
   return (
     <div className='landing_page'>
       <div className='landing_page--action all-center'>
         <h2>
           Order beer online at the UK's best online beer shop with free delivery
         </h2>
-        <Link
-          to='/Home'
-          className='btn btn-landing'
-          onClick={beerContext.loadBeers}
-        >
+        <Link to='/Home' className='btn btn-landing' onClick={handleClick}>
           Explore our Selection
         </Link>
       </div>

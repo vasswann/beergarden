@@ -14,11 +14,11 @@ const BeerState = (props) => {
   const [state, dispatch] = useReducer(BeerReducer, initialState);
 
   // Load beers from API
-  const loadBeers = async () => {
+  const loadBeers = async (num = 1) => {
     try {
       setLoading();
       const res = await axios(
-        `https://api.punkapi.com/v2/beers?page=1&per_page=24`
+        `https://api.punkapi.com/v2/beers?page=${num}&per_page=24`
       );
       dispatch({
         type: LOAD_BEERS,

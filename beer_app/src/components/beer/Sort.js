@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import BeerContext from '../../context/beer/beerContext';
-import Spinner from '../layout/Spinner';
 
 const Sort = () => {
   const beerContext = useContext(BeerContext);
@@ -9,6 +8,8 @@ const Sort = () => {
   const onChange = (e) => {
     if (e.target.value === 'Name') {
       sortBeers(beers.sort(compare));
+    } else if (e.target.value === 'Strength') {
+      console.log('heureka');
     }
   };
 
