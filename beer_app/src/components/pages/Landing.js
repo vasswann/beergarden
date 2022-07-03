@@ -4,9 +4,10 @@ import BeerContext from '../../context/beer/beerContext';
 
 const Landing = () => {
   const beerContext = useContext(BeerContext);
+  const { page, loadBeers } = beerContext;
 
   const handleClick = () => {
-    beerContext.loadBeers();
+    loadBeers(page);
   };
 
   return (

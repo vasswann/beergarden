@@ -207,6 +207,7 @@ ul {
   background: var(--primary-color);
   color: #333;
   margin-top: 1rem;
+  padding: 0.5rem;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.5rem;

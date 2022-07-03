@@ -2,19 +2,26 @@ import React, { useReducer } from 'react';
 import axios from 'axios';
 import BeerContext from './beerContext';
 import BeerReducer from './beerReducer';
-import { LOAD_BEERS, SORT_BEERS, GET_BEER, SET_LOADING } from '../types';
+import {
+  LOAD_BEERS,
+  SORT_BEERS,
+  GET_BEER,
+  SET_LOADING,
+  SET_PAGE,
+} from '../types';
 
 const BeerState = (props) => {
   const initialState = {
     beers: [],
     beer: {},
+    page: 1,
     loading: false,
   };
 
   const [state, dispatch] = useReducer(BeerReducer, initialState);
 
   // Load beers from API
-  const loadBeers = async (num = 1) => {
+  const loadBeers = async (num) => {
     try {
       setLoading();
       const res = await axios(
@@ -56,6 +63,18 @@ const BeerState = (props) => {
     }
   };
 
+  // // sort beers
+  const setPage = async (num) => {
+    try {
+      dispatch({
+        type: SET_PAGE,
+        payload: num,
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   //set loading
   const setLoading = () => dispatch({ type: SET_LOADING });
 
@@ -65,9 +84,11 @@ const BeerState = (props) => {
         beers: state.beers,
         beer: state.beer,
         loading: state.loading,
+        page: state.page,
         loadBeers,
         getBeer,
         sortBeers,
+        setPage,
       }}
     >
       {props.children}

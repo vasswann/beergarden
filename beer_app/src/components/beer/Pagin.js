@@ -4,11 +4,11 @@ import BeerContext from '../../context/beer/beerContext';
 
 const Pagin = () => {
   const beerContext = useContext(BeerContext);
-  const { loadBeers } = beerContext;
+  const { page, setPage, loadBeers } = beerContext;
 
-  // pagination is workig but not saved in the state. When you back the data is lost, and load the first page.
-  const handlePageClick = (page) => {
-    loadBeers(page.selected + 1);
+  const handlePageClick = (count) => {
+    setPage(count.selected + 1);
+    loadBeers(page);
   };
 
   return (
@@ -21,6 +21,7 @@ const Pagin = () => {
         marginPagesDisplayed={2}
         pageRangeDisplayed={3}
         onPageChange={handlePageClick}
+        initialPage={page - 1}
         containerClassName={'pagination-container'}
         pageClassName={'page-item'}
         pageLinkClassName={'page-link'}

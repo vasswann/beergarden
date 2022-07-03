@@ -1,6 +1,6 @@
 import React, { Fragment, useContext } from 'react';
 import Spinner from '../layout/Spinner';
-import { Link, useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import BeerContext from '../../context/beer/beerContext';
 
 const Beer = () => {
@@ -8,6 +8,7 @@ const Beer = () => {
   const beerContext = useContext(BeerContext);
   const { loading, beers } = beerContext;
   const { id } = useParams();
+  const navigate = useNavigate();
 
   // here i am not using app level state second variant
   const beerpost = beers.filter((beer) => parseInt(beer.id) === parseInt(id));
@@ -31,9 +32,14 @@ const Beer = () => {
           </p>
         </div>
       </div>
-      <Link to={'/Home'} className='btn btn-card all-center container'>
+      <button
+        className='btn btn-card all-center container'
+        onClick={() => {
+          navigate('/Home');
+        }}
+      >
         Back to homepage
-      </Link>
+      </button>
     </Fragment>
   );
 };
