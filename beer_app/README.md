@@ -17,6 +17,8 @@ This is a react app caling a Beer API.
 - About the design. The first go I used MaterialUI, then I changed back to normal CSS. Because the project is small, I left the design with vanilla CSS.
   I could choose sass, materialUI or I would build a custom class based css design.
 
-- Future implementation - Page pagination. Using react-paginate with own style of css
+- the responsive side done with CSS mediaqueries specifying the brake points, and change the grid and the font size.
+
+- Page pagination. Using react-paginate with own style of css
 
 - Unit testing it's not done yet.

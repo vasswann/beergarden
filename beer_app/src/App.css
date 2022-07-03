@@ -20,6 +20,26 @@ body {
   color: #333;
 }
 
+/* responsive text */
+html {
+  font-size: 75%;
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 65%;
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  html {
+    font-size: 55%;
+  }
+}
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 100%;
+  }
+}
+
 ul {
   list-style: none;
 }
@@ -221,6 +241,7 @@ ul {
 .beer_item-box {
   border: 1px solid black;
   padding: 2rem;
+  font-size: 1.5rem;
 }
 
 /* Pagination */
